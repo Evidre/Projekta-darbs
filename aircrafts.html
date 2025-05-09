@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Lidaparāti - AeroInfo{% endblock %}
+{% block content %}
+
+<h2>Lidaparāti</h2>
+<div class="aircraft-list">
+    {% for aircraft in aircrafts %}
+    <a class="aircrafts-item" href="{{ url_for('aircrafts_show', aircraft_id=aircraft['id']) }}">
+        <img src="{{ url_for('static', filename='images/aircrafts/' ~ aircraft['image']) }}" alt="{{ aircraft['name'] }}">
+        <div class="aircraft-name">{{ aircraft["name"] }}</div>
+    </a>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}{{aircraft.name}}{% endblock %}
+{% block content %}
+
+<div class="aircrafts-show">
+    <img src="{{ url_for('static', filename='images/aircrafts/' ~ aircraft['image']) }}" alt="{{ aircraft['name'] }}">
+    <div>
+        <h2>{{aircraft["name"]}}</h2>
+        <p>Veids: {{aircraft["type"]}}</p>
+        <p>Gads, kurā tika veikts pirmais lidojums: {{aircraft["first_flight"]}}</p>
+        <p>Maksimālais ātrums: {{aircraft["top_speed"]}} km/h</p>
+    </div>
+</div>
+{% endblock %}
